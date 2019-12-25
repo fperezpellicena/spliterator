@@ -15,8 +15,8 @@ class SpliteratorWordCounterTest {
 
     @Test
     public void phraseWithExtraWhitespaces() {
-        String text = " Hello   I'm  Frank ";
-        assertEquals(3, SpliteratorWordCounter.countWords(text));
+        String text = " Hello   I'm  Frank and I wanted to tell you something that could be of your deepest interest";
+        assertEquals(17, SpliteratorWordCounter.countWords(text));
     }
     
 }

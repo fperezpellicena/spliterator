@@ -9,7 +9,8 @@ public class SpliteratorWordCounter {
         WordCounterSpliterator spliterator = new WordCounterSpliterator(text);
         Stream<Character> characterStream = StreamSupport.stream(spliterator, true);
         WordCounter identity = new WordCounter(0, true);
-        WordCounter wordCounter = characterStream.parallel().reduce(identity, WordCounter::accumulate, WordCounter::combine);
+        WordCounter wordCounter = characterStream.parallel()
+                .reduce(identity, WordCounter::accumulate, WordCounter::combine);
         return wordCounter.getCounter();
     }
 
